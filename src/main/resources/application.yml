@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: mensageria-ecommerce
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  docker:
+    compose:
+      enabled: true
+      file: docker-compose.yml
+
+logging:
+  level:
+    root: INFO
+    org.springframework.amqp: INFO
