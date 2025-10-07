@@ -22,4 +22,5 @@ done
 
 PRGDIR=`dirname "$PRG"`
 
-exec java -jar "$PRGDIR/gradle/wrapper/gradle-wrapper.jar" "$@"
+CLASSPATH="$PRGDIR/gradle/wrapper/gradle-wrapper.jar"
+exec java -cp "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

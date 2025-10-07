@@ -17,7 +17,9 @@ if exist "%JARPATH%" (
 
     if exist "%JARPATH%" (
         echo Download succeeded.
-        java -jar "%JARPATH%" %*
+        rem Execute the wrapper main class from the jar
+        set CLASSPATH=%JARPATH%
+        java -cp "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
         exit /b %ERRORLEVEL%
     ) else (
         echo Failed to download gradle-wrapper.jar. Please download manually to %DIRNAME%gradle\wrapper\ and try again.
